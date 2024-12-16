@@ -4,13 +4,7 @@
 \alias{create_and_share_folder}
 \title{Create and Share Folder in Nextcloud}
 \usage{
-create_and_share_folder(
-  webdav_url,
-  folder_name,
-  username,
-  password,
-  base_ocs_url
-)
+create_and_share_folder(webdav_url, folder_name, username, base_ocs_url)
 }
 \arguments{
 \item{webdav_url}{URL to the WebDAV endpoint.}
@@ -18,8 +12,6 @@ create_and_share_folder(
 \item{folder_name}{The name of the folder to create.}
 
 \item{username}{User's username.}
-
-\item{password}{User's password.}
 
 \item{base_ocs_url}{Base URL for the OCS API.}
 }

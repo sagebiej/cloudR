@@ -5,11 +5,10 @@
 #' @param webdav_url URL to the WebDAV endpoint.
 #' @param folder_name The name of the folder to create.
 #' @param username User's username.
-#' @param password User's password.
 #' @param base_ocs_url Base URL for the OCS API.
 #' @return A message indicating success or failure.
 #' @export
-create_and_share_folder <- function(webdav_url, folder_name, username, password, base_ocs_url) {
+create_and_share_folder <- function(webdav_url, folder_name, username, base_ocs_url) {
 
   password <- getPass::getPass("Enter your password:")
 

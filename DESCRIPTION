@@ -12,4 +12,8 @@ LazyData: true
 RoxygenNote: 7.3.2
 Imports: 
     getPass,
-    httr
+    httr,
+    zip
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
