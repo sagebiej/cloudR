@@ -1,12 +1,12 @@
 Package: cloudR
 Type: Package
-Title: What the Package Does (Title Case)
+Title: A simple tool to quickly interact with nextcloud or similar webdav compatible services.
 Version: 0.1.0
-Author: Who wrote it
+Author: Julian Sagebiel
 Maintainer: The package maintainer <yourself@somewhere.net>
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.3.2
