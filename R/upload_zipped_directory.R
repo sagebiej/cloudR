@@ -11,10 +11,10 @@
 #' @param password Nextcloud password.
 #' @return A message indicating the outcome of the upload operation.
 #' @export
-#' @examples
-#' upload_zipped_directory_to_nextcloud("path/to/local/folder", "path/to/zipfile.zip",
+#' @examples \dontrun{
+#' upload_zipped_directory("path/to/local/folder", "path/to/zipfile.zip",
 #'                                      "https://nextcloud.instance.com", "/path/in/nextcloud/",
-#'                                      "username", "yourpassword")
+#'                                      "username") }
 upload_zipped_directory <- function(local_folder_path, zip_file_path, nextcloud_base_url, target_nextcloud_folder, username) {
 
   password <- getPass::getPass("Enter your password:")

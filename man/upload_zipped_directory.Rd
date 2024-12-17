@@ -33,7 +33,8 @@ This function zips a local directory and uploads the resulting ZIP file to a spe
 location in Nextcloud using WebDAV.
 }
 \examples{
-upload_zipped_directory_to_nextcloud("path/to/local/folder", "path/to/zipfile.zip",
+\dontrun{
+upload_zipped_directory("path/to/local/folder", "path/to/zipfile.zip",
                                      "https://nextcloud.instance.com", "/path/in/nextcloud/",
-                                     "username", "yourpassword")
+                                     "username") }
 }
