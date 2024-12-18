@@ -22,7 +22,7 @@ download_and_extract_zip <- function(url, dest_folder = ".", zip_name = NULL) {
   }
 
   # Construct the full path for the ZIP file
-  zip_path <- file.path(dest_folder, zip_name)
+  zip_path <- file.path(dirname(dest_folder), zip_name)
 
   # Check if the folder where the data is to be stored exists and is empty
   if (!dir.exists(dest_folder)) {
