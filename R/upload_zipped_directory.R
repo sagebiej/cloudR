@@ -35,7 +35,7 @@ upload_zipped_directory <- function(local_folder_path, zip_file_path, nextcloud_
   cat("\n Starting to upload zipped file \n")
 
   # Perform the PUT request
-  response <- httr::PUT(url = target_file_path, body = file_content, httr::authenticate(username, password, type = "basic"))
+  response <- httr::PUT(url = target_file_path, body = file_content, httr::progress(), httr::authenticate(username, password, type = "basic"))
 
   # Check the response and return a message
   if (httr::status_code(response) == 201) {
