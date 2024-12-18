@@ -22,7 +22,7 @@ download_and_extract_zip <- function(url, dest_folder = ".", zip_name = NULL) {
   }
 
   # Construct the full path for the ZIP file
-  zip_path <- file.path(dirname(dest_folder), zip_name)
+  zip_path <- file.path(dest_folder, zip_name)
 
   # Check if the folder where the data is to be stored exists and is empty
   if (!dir.exists(dest_folder)) {
@@ -36,7 +36,7 @@ download_and_extract_zip <- function(url, dest_folder = ".", zip_name = NULL) {
   utils::download.file(url, zip_path, method = "auto", quiet = FALSE, mode = "wb", cacheOK = TRUE)
 
   # Extract the contents
-  zip::unzip(zip_path, exdir = dest_folder)
+  zip::unzip(zip_path, exdir = dirname(dest_folder))
 
   # Clean up by deleting the downloaded ZIP file
   file.remove(zip_path)
