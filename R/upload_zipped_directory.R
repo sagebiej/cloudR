@@ -18,7 +18,11 @@ upload_zipped_directory <- function(local_folder_path, zip_file_path, nextcloud_
 
   password <- getPass::getPass("Enter your password:")
   # Create the ZIP file
+
+  cat("\n Starting to zip the file \n")
   zip::zip(zipfile = zip_file_path, files = local_folder_path, recurse = TRUE)
+
+  cat("\n Zipping completed \n")
 
   # Full URL for the uploaded ZIP file on Nextcloud
   target_file_path <- paste0(nextcloud_base_url, target_nextcloud_folder, basename(zip_file_path))
@@ -27,6 +31,8 @@ upload_zipped_directory <- function(local_folder_path, zip_file_path, nextcloud_
 
   # Prepare the ZIP file for upload
   file_content <- httr::upload_file(zip_file_path, type = "application/zip")
+
+  cat("\n Starting to upload zipped file \n")
 
   # Perform the PUT request
   response <- httr::PUT(url = target_file_path, body = file_content, httr::authenticate(username, password, type = "basic"))
