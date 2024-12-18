@@ -8,7 +8,6 @@
 #' @param nextcloud_base_url The base URL of the Nextcloud instance.
 #' @param target_nextcloud_folder The target folder in Nextcloud where the ZIP file will be uploaded.
 #' @param username Nextcloud username.
-#' @param password Nextcloud password.
 #' @return A message indicating the outcome of the upload operation.
 #' @export
 #' @examples \dontrun{

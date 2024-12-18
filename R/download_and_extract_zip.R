@@ -12,7 +12,8 @@
 #' @export
 #' @examples
 #' \dontrun{
-#' download_and_extract_zip(url = "http://www.example.com/datafile.zip", dest_folder = "path/to/destination")
+#' download_and_extract_zip(url = "http://www.example.com/datafile.zip",
+#'                          dest_folder = "path/to/destination")
 #' }
 download_and_extract_zip <- function(url, dest_folder = ".", zip_name = NULL) {
   # If zip_name is not provided, extract it from the URL

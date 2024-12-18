@@ -24,6 +24,7 @@ by ensuring that the downloaded data is stored correctly.
 }
 \examples{
 \dontrun{
-download_and_extract_zip(url = "http://www.example.com/datafile.zip", dest_folder = "path/to/destination")
+download_and_extract_zip(url = "http://www.example.com/datafile.zip",
+                         dest_folder = "path/to/destination")
 }
 }

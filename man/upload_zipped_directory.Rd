@@ -22,8 +22,6 @@ upload_zipped_directory(
 \item{target_nextcloud_folder}{The target folder in Nextcloud where the ZIP file will be uploaded.}
 
 \item{username}{Nextcloud username.}
-
-\item{password}{Nextcloud password.}
 }
 \value{
 A message indicating the outcome of the upload operation.
