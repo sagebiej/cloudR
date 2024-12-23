@@ -1,11 +1,10 @@
 Package: cloudR
 Type: Package
-Title: A simple tool to quickly interact with nextcloud or similar webdav compatible services
+Title: CloudR: A simple tool to quickly interact with nextcloud or similar webdav compatible services
 Version: 0.2.0
 Author: Julian Sagebiel
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Maintainer: Julian Sagebiel <julian.sagebiel@idiv.de>
+Description: A wrapper to connect to webdav (e.g. nextcloud) to upload and download folders or files.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
