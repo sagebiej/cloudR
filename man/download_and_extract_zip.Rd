@@ -4,7 +4,12 @@
 \alias{download_and_extract_zip}
 \title{Downloads and extracts external data to be used in the simulation}
 \usage{
-download_and_extract_zip(url, dest_folder = ".", zip_name = NULL)
+download_and_extract_zip(
+  url,
+  dest_folder = ".",
+  zip_name = NULL,
+  overwrite = FALSE
+)
 }
 \arguments{
 \item{url}{The URL from where the external data can be downloaded.
@@ -13,6 +18,8 @@ The external data should be in a ZIP file.}
 \item{dest_folder}{The folder where the data should be stored. Defaults to the current working directory.}
 
 \item{zip_name}{Optional; specifies the name of the ZIP file if it differs from the last part of the URL.}
+
+\item{overwrite}{set to true if you want to overwrite the existing folder. Be careful, the folder will be deleted first and then the content will be downloaded and extracted. Default is FALSE}
 }
 \value{
 The path to the folder where the ZIP file was extracted, invisibly.

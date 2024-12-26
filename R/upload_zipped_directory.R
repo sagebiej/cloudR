@@ -38,8 +38,8 @@ upload_zipped_directory <- function(local_folder_path, zip_file_path, nextcloud_
   response <- httr::PUT(url = target_file_path, body = file_content, httr::progress(), httr::authenticate(username, password, type = "basic"))
 
   # Check the response and return a message
-  if (httr::status_code(response) == 201) {
-    cat("ZIP file upload successful:", target_file_path, "\n")
+  if (httr::status_code(response) == 201 | 204) {
+    cat("ZIP file upload successful:", target_file_path, "\n status code: ", httr::status_code(response), "\n")
   } else {
     cat("ZIP file upload failed with status code:", httr::status_code(response), "\n")
   }

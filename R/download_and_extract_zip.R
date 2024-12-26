@@ -8,6 +8,7 @@
 #'            The external data should be in a ZIP file.
 #' @param dest_folder The folder where the data should be stored. Defaults to the current working directory.
 #' @param zip_name Optional; specifies the name of the ZIP file if it differs from the last part of the URL.
+#' @param overwrite set to true if you want to overwrite the existing folder. Be careful, the folder will be deleted first and then the content will be downloaded and extracted. Default is FALSE
 #' @return The path to the folder where the ZIP file was extracted, invisibly.
 #' @export
 #' @examples
@@ -15,7 +16,7 @@
 #' download_and_extract_zip(url = "http://www.example.com/datafile.zip",
 #'                          dest_folder = "path/to/destination")
 #' }
-download_and_extract_zip <- function(url, dest_folder = ".", zip_name = NULL) {
+download_and_extract_zip <- function(url, dest_folder = ".", zip_name = NULL, overwrite = FALSE) {
   # If zip_name is not provided, extract it from the URL
   if (is.null(zip_name)) {
     zip_name <- basename(url)
@@ -24,12 +25,21 @@ download_and_extract_zip <- function(url, dest_folder = ".", zip_name = NULL) {
   # Construct the full path for the ZIP file
   zip_path <- file.path(dest_folder, zip_name)
 
-  # Check if the folder where the data is to be stored exists and is empty
+  # Check if the folder where the data is to be stored exists
   if (!dir.exists(dest_folder)) {
     dir.create(dest_folder, recursive = TRUE, showWarnings = TRUE)
-  } else if (length(list.files(dest_folder)) > 0) {
-    warning("Destination folder is not empty. Nothing copied.")
-    return(invisible(NULL))
+  } else {
+    # Check if overwrite is true; if so, delete existing files
+    if (overwrite) {
+      # Remove all files and directories in the destination folder
+      files <- list.files(dest_folder, full.names = TRUE)
+      if (length(files) > 0) {
+        file.remove(files)
+      }
+    } else if (length(list.files(dest_folder)) > 0) {
+      warning("Destination folder is not empty. Nothing copied.")
+      return(invisible(NULL))
+    }
   }
 
   # Download the zip file
