@@ -1,5 +1,5 @@
 rm(list = ls())
-devtools::load_all()
+#devtools::load_all()
 
 
 
@@ -13,7 +13,7 @@ file.create(file.path(test_dir, "dummyfile2.RDS"))
 
 folder_name <- "uploads/cloudR_testfiles/"              ## folder on nextcloud
 nextcloud_base_url <- "https://cloud.idiv.de/"          ## nextcloud URL
-webdav_url <- paste0(nextcloud_base_url, "/remote.php/dav/files/dj44vuri")   ## URL extention for WEBDAV
+webdav_url <- paste0(nextcloud_base_url, "/remote.php/dav/files/dj44vuri")   ## URL extension for WEBDAV
 username <- "dj44vuri"                                  ## username
 
 
