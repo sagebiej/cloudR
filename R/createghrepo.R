@@ -1,17 +1,3 @@
-#' Create a new GitHub repository and set an upstream
-#'
-#' This function initializes a new GitHub repository with the specified name,
-#' renames the local master branch to main, sets a remote named upstream,
-#' and pushes the main branch to the newly set upstream.
-#'
-#' @inheritParams invite_collaborators
-#' @param upstream The URL of the upstream repository to set for pushing changes.
-#' @return Invisible NULL, used for side effects of creating and setting up the repository.
-#' @export
-#' @examples \dontrun{
-#' create_ghrepo("mynewrepo", "https://github.com/username/mynewrepo.git")
-#' }
-
 create_ghrepo <- function(projname, upstream, collaborators = character()) {
   # Check if the projname is a non-empty string
   if (!is.character(projname) || nzchar(projname) == FALSE) {
@@ -23,9 +9,12 @@ create_ghrepo <- function(projname, upstream, collaborators = character()) {
     stop("Invalid upstream URL: must be a valid HTTPS or SSH URL.")
   }
 
-  # Attempt to rename the local branch from master to main
-  if (system("git branch -m master main") != 0) {
-    stop("Failed to rename the branch from master to main.")
+  # Check if the master branch exists and attempt to rename it
+  branches <- system("git branch", intern = TRUE)  # Capture output of git branch
+  if ("master" %in% branches) {
+    if (system("git branch -m master main") != 0) {
+      stop("Failed to rename the branch from master to main.")
+    }
   }
 
   # Create repository on GitHub using the gh package
