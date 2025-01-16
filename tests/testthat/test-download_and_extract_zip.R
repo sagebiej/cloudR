@@ -27,7 +27,7 @@ test_that("Function extracts correctly to an empty directory", {
   download_and_extract_zip(dl_url, temp_dir, overwrite = TRUE)
   expect_false(file.exists(file.path(temp_dir, "oldfile.txt")))
   unlink(temp_dir, recursive = TRUE)
-  expect_error(download_and_extract_zip("http://thisurldoesnotexist.com/datafile.zip", temp_dir))
+  expect_error(download_and_extract_zip("http://thiasfasdfasfasfastexist.com/datafile.zip", temp_dir))
   # Cleanup
 
 })

@@ -5,6 +5,7 @@
 #' and pushes the main branch to the newly set upstream.
 #'
 #' @inheritParams invite_collaborators
+#' @param projname The name of the project. It need to be the same as in the upstream link.
 #' @param upstream The URL of the upstream repository to set for pushing changes.
 #' @return Invisible NULL, used for side effects of creating and setting up the repository.
 #' @export

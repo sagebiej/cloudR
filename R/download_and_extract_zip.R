@@ -46,7 +46,7 @@ download_and_extract_zip <- function(url, dest_folder = ".", zip_name = NULL, ov
   utils::download.file(url, zip_path, method = "auto", quiet = FALSE, mode = "wb", cacheOK = TRUE)
 
   # Extract the contents
-  zip::unzip(zip_path, exdir = dirname(dest_folder))
+  utils::unzip(zipfile = zip_path, exdir  = dirname(dest_folder))
 
   # Clean up by deleting the downloaded ZIP file
   file.remove(zip_path)

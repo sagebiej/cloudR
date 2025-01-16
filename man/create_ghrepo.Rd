@@ -7,6 +7,8 @@
 create_ghrepo(projname, upstream, collaborators = character())
 }
 \arguments{
+\item{projname}{The name of the project. It need to be the same as in the upstream link.}
+
 \item{upstream}{The URL of the upstream repository to set for pushing changes.}
 
 \item{collaborators}{A character vector of GitHub usernames to be added as collaborators.}
