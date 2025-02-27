@@ -4,12 +4,22 @@
 \alias{create_ghrepo}
 \title{Create a new GitHub repository and set an upstream}
 \usage{
-create_ghrepo(projname, upstream, collaborators = character())
+create_ghrepo(
+  projname,
+  upstream,
+  repo_type = "personal",
+  org_name = NULL,
+  collaborators = character()
+)
 }
 \arguments{
-\item{projname}{The name of the project. It need to be the same as in the upstream link.}
+\item{projname}{The name of the project. It must be the same as in the upstream link.}
 
 \item{upstream}{The URL of the upstream repository to set for pushing changes.}
+
+\item{repo_type}{The type of repository to create. Can be `"personal"` (default) or `"organization"`.}
+
+\item{org_name}{The organization name (required if `repo_type = "organization"`).}
 
 \item{collaborators}{A character vector of GitHub usernames to be added as collaborators.}
 }
@@ -23,6 +33,7 @@ and pushes the main branch to the newly set upstream.
 }
 \examples{
 \dontrun{
-create_ghrepo("mynewrepo", "https://github.com/username/mynewrepo.git")
+create_ghrepo("mynewrepo", "https://github.com/username/mynewrepo.git", repo_type = "personal")
+create_ghrepo("orgrepo", "https://github.com/myorg/orgrepo.git", repo_type = "organization", org_name = "myorg")
 }
 }
