@@ -40,7 +40,8 @@ create_ghrepo <- function(projname, upstream, repo_type = "personal", org_name =
   }
 
   # Rename 'master' to 'main' if it exists
-  branches <- system("git branch", intern = TRUE)  # Get list of branches
+  branches <- system("git branch", intern = TRUE) # Get list of branches
+  branches <- gsub("^\\*\\s*", "", branches)
   if ("master" %in% branches) {
     if (system("git branch -m master main") != 0) {
       stop("Failed to rename the branch from master to main.")
