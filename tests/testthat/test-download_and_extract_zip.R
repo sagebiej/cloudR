@@ -1,6 +1,6 @@
 
 # Define the download URL
-dl_url <- "https://cloud.idiv.de/index.php/s/PZHAWorcKZcafwn/download?path=%2F&files=binaries.zip"
+dl_url <- "https://cloud.idiv.de/index.php/s/3LrBbTY7SJkWYj9/download?path=%2F"
 
 # Setup a temporary directory for testing
 test_dir <- file.path(tempdir(),"testfolder")
